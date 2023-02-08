@@ -129,7 +129,7 @@ func (tw *TimeWheel) scanAndRunTask(l *list.List) {
 		go tw.job(task.data)
 		next := e.Next()
 		l.Remove(e)
-		if task.key != nil {
+		if task.key != nil { //TODO: 不理解
 			delete(tw.timer, task.key)
 		}
 		e = next
